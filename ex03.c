@@ -3,24 +3,29 @@
 #include <time.h>
 
 int main() {
-    int dice1, dice2;
-    int total;
+    int Heads = 0,Tails = 0,toss1,toss2,toss3;
 
     // 乱数のシードを設定
     srand(time(NULL));
 
-    // さいころを2回降る
-    dice1 = rand() % 6 + 1; // 1から6までの乱数を生成
-    dice2 = rand() % 6 + 1; // 1から6までの乱数を生成
-
-    // 合計を計算
-    total = dice1 + dice2;
+    toss1 = rand() % 2;
+    toss2 = rand() % 2;
+    toss3 = rand() % 2;
 
     // 結果を出力
-    printf("Rolling dice...\n");
-    printf("Die 1: %d\n",dice1);
-    printf("Die 2: %d\n",dice2);
-    printf("Total value: %d\n",total);
+    printf("Tossing a coin...\n");
+    printf("Round 1: %s\n",toss1 == 1 ? "Heads" : "Tails");
+    if(toss1 == 1) Heads += 1;
+    else Tails += 1;
+
+    printf("Round 2: %s\n",toss2 == 1 ? "Heads" : "Tails");
+    if(toss2 == 1) Heads += 1;
+    else Tails += 1;
+    printf("Round 3: %s\n",toss3 == 1 ? "Heads" : "Tails");
+    if(toss3 == 1) Heads += 1;
+    else Tails += 1;
+
+    printf("Heads: %d, Tails: %d\n",Heads,Tails);
 
     return 0;
 }
